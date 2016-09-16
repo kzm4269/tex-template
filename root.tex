@@ -2,24 +2,29 @@
 \usepackage{sty/mystd}
 \usepackage{sty/report}
 
-\begin{document}
 % -- タイトル
 \title{Your document title}
 \author{Your name}
 \date{\today}
-\thispagestyle{fancy}
-\maketitle
 
-% -- ヘッダとフッタの設定
+% -- ヘッダとフッタ
 \pagestyle{fancy}
 \fancyhead{}
+\fancyhead[R]{\和暦 \today \\ right header}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 
-% -- 本文
-\input{src/body.tex}
+\begin{document}
+	% -- タイトルページ
+	\thispagestyle{empty}
+	\maketitle
+	
+	% -- 本文
+	\thispagestyle{fancy}
+	\setcounter{page}{1}
+	\input{src/body.tex}
 
-% -- 参考文献
-\bibliographystyle{jplain}
-\bibliography{bib/bibliographies}
+	% -- 参考文献
+	\bibliographystyle{jplain}
+	\bibliography{bib/bibliographies}
 \end{document}
