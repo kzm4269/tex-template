@@ -1,0 +1,11 @@
+% INFO: http://mirrors.ctan.org/macros/latex/contrib/geometry/geometry.pdf
+
+\DeclareOption{standard}{\newgeometry{
+	top    = 25 truemm,
+	bottom = 25 truemm,
+	left   = 25 truemm,
+	right  = 25 truemm,
+}}
+
+\DeclareOption*{\PackageWarning{geometry-templates}{Unknown '\CurrentOption'}}
+\ProcessOptions\relax

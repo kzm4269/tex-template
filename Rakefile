@@ -9,6 +9,7 @@ PROJECT_ROOT = File.expand_path(__dir__)
 
 DIST_DIR = "#{PROJECT_ROOT}/dist"
 SRC_DIR = "#{PROJECT_ROOT}/src"
+STY_DIR = "#{PROJECT_ROOT}/sty"
 BIB_DIR = "#{PROJECT_ROOT}/bib"
 FIG_DIR = "#{PROJECT_ROOT}/fig"
 ETC_DIR = "#{PROJECT_ROOT}/etc"
@@ -95,7 +96,9 @@ end
 directory DIST_DIR
 file TARGET => DIST_DIR
 
-SRC = FileList[ROOT_TEX] + FileList["#{SRC_DIR}/**/*"]
+SRC = FileList[ROOT_TEX] + 
+	FileList["#{SRC_DIR}/**/*"] + 
+	FileList["#{STY_DIR}/**/*"]
 TEX = SRC.select {|s| s.match(/\.(tex|sty)/i)}
 MARKDOWN = SRC.select {|s| s.match(/\.(md|markdown)/i)}
 

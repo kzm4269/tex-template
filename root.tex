@@ -1,32 +1,35 @@
 \documentclass[11pt, a4paper]{jsarticle}
-\usepackage{sty/mystd}
-\usepackage{sty/report}
+\usepackage{sty/basic-packages}
+\usepackage{sty/command/all}
+\usepackage{sty/format/standard}
+\usepackage[standard]{sty/geometry-templates}
 
-% -- タイトル
+% -- title
 \title{Your document title}
 \author{Your name}
 \date{\today}
 
-% -- ヘッダとフッタ
-\pagestyle{fancy}
-\fancyhead{}
-\fancyhead[R]{\和暦 \today \\ right header}
-\fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
+% -- header and footer
+\fancypagestyle{body}{
+	\fancyhead[R]{\和暦 \today}
+	\fancyfoot[C]{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+}
 
 \begin{document}
-	% -- タイトルページ
-	\thispagestyle{empty}
-	\maketitle
+	% -- title
+	\twocolumn[
+		\maketitle
+		\thispagestyle{empty}
+	]
 	
-	\begin{multicols}{2}
-		% -- 本文
-		\thispagestyle{fancy}
-		\setcounter{page}{1}
-		\input{src/body.tex}
+	% -- body
+	\thispagestyle{body}
+	\setcounter{page}{1}
+	\input{src/body.tex}
 
-		% -- 参考文献
-		\bibliographystyle{jplain}
-		\bibliography{bib/bibliographies}
-	\end{multicols}
+	% -- references
+	\bibliographystyle{jplain}
+	\bibliography{bib/bibliographies}
 \end{document}
+
