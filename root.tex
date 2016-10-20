@@ -19,12 +19,14 @@
 	\thispagestyle{empty}
 	\maketitle
 	
-	% -- 本文
-	\thispagestyle{fancy}
-	\setcounter{page}{1}
-	\input{src/body.tex}
+	\begin{multicols}{2}
+		% -- 本文
+		\thispagestyle{fancy}
+		\setcounter{page}{1}
+		\input{src/body.tex}
 
-	% -- 参考文献
-	\bibliographystyle{jplain}
-	\bibliography{bib/bibliographies}
+		% -- 参考文献
+		\bibliographystyle{jplain}
+		\bibliography{bib/bibliographies}
+	\end{multicols}
 \end{document}
