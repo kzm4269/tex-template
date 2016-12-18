@@ -24,5 +24,6 @@ dist/*
 *.mtc
 *.mtc1
 *.out
+*.fls
 *.synctex.gz
 *.fdb_latexmk
